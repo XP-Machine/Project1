@@ -170,7 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalName: Cat
   speed: 2
-  gravity: 0
+  gravity: -9.81
+  jumpHeight: 2
   controller: {fileID: 347335}
 --- !u!143 &347335
 CharacterController:
@@ -669,7 +670,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalName: Donkey
   speed: 1.5
-  gravity: 0
+  gravity: -9.81
+  jumpHeight: 2
   controller: {fileID: 561426160}
 --- !u!143 &561426160
 CharacterController:
@@ -745,7 +747,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalName: Dog
   speed: 3
-  gravity: 0
+  gravity: -9.81
+  jumpHeight: 2
   controller: {fileID: 680862434}
 --- !u!143 &680862434
 CharacterController:
@@ -1134,7 +1137,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animalName: Rooster
   speed: 2
-  gravity: 0
+  gravity: -9.81
+  jumpHeight: 2
   controller: {fileID: 1112865433}
 --- !u!4 &1112865432
 Transform:
