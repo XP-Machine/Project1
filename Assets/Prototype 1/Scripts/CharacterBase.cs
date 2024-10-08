@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public abstract class CharacterBase : MonoBehaviour
@@ -13,6 +14,12 @@ public abstract class CharacterBase : MonoBehaviour
     protected float verticalVelocity; // Stores the upward/downward velocity
     protected bool isGrounded;
     protected bool isControlled;
+
+    protected float StackingTimer;
+    protected bool Stacking;
+    public float StackTimerDuration = 1f;
+
+    protected string[] AnimalTags = new string[4] { "Rooster", "Cat", "Dog", "Donkey" };
 
     public virtual void Move(Vector2 inputVect)
     {
@@ -56,5 +63,27 @@ public abstract class CharacterBase : MonoBehaviour
     public void toggleControl()
     {
         isControlled = !isControlled;
+    }
+
+
+    public void OnTriggerEnter(Collider other)
+    { 
+        if(AnimalTags.Contains<string>(other.gameObject.tag))
+        {
+            StackingTimer = 0;
+            Stacking = true;
+        }
+        
+    }
+    public void OnTriggerStay(Collider other)
+    {
+        if (!Stacking) return;
+
+        StackingTimer += Time.deltaTime;
+        if (StackingTimer >= StackTimerDuration)
+        {
+            print("Timer Reached");
+            Stacking = false;
+        }
     }
 }

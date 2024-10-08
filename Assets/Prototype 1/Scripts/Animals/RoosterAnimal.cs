@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class RoosterAnimal : CharacterBase
 {
+    public void Start()
+    {
+        AnimalTags = new string[] { "Cat", "Dog", "Donkey" };
+    }
     public override void Move(Vector2 inputVect)
     {
         base.Move(inputVect);

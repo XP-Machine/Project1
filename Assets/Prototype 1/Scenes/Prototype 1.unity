@@ -133,9 +133,10 @@ GameObject:
   - component: {fileID: 347333}
   - component: {fileID: 347334}
   - component: {fileID: 347335}
+  - component: {fileID: 347336}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,6 +174,7 @@ MonoBehaviour:
   gravity: -9.81
   jumpHeight: 2
   controller: {fileID: 347335}
+  StackTimerDuration: 1
 --- !u!143 &347335
 CharacterController:
   m_ObjectHideFlags: 0
@@ -199,6 +201,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &347336
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347332}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5, y: 1.51, z: 1.85}
+  m_Center: {x: 0, y: 0.76, z: 0}
 --- !u!1 &56901457
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,7 +510,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: ab045a9a0121e40439b7499d81309205, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -633,9 +656,10 @@ GameObject:
   - component: {fileID: 561426158}
   - component: {fileID: 561426159}
   - component: {fileID: 561426160}
+  - component: {fileID: 561426161}
   m_Layer: 0
   m_Name: Donkey
-  m_TagString: Untagged
+  m_TagString: Donkey
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -673,6 +697,7 @@ MonoBehaviour:
   gravity: -9.81
   jumpHeight: 2
   controller: {fileID: 561426160}
+  StackTimerDuration: 1
 --- !u!143 &561426160
 CharacterController:
   m_ObjectHideFlags: 0
@@ -699,6 +724,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!65 &561426161
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 561426157}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5, y: 2.04, z: 3}
+  m_Center: {x: 0, y: 1.28, z: -0.35}
 --- !u!1 &680862431
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,9 +756,10 @@ GameObject:
   - component: {fileID: 680862432}
   - component: {fileID: 680862433}
   - component: {fileID: 680862434}
+  - component: {fileID: 680862435}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: Untagged
+  m_TagString: Dog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -750,6 +797,7 @@ MonoBehaviour:
   gravity: -9.81
   jumpHeight: 2
   controller: {fileID: 680862434}
+  StackTimerDuration: 1
 --- !u!143 &680862434
 CharacterController:
   m_ObjectHideFlags: 0
@@ -776,6 +824,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.6, z: 0}
+--- !u!65 &680862435
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 680862431}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.21, y: 1.25, z: 3.28}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,9 +1185,10 @@ GameObject:
   - component: {fileID: 1112865432}
   - component: {fileID: 1112865431}
   - component: {fileID: 1112865433}
+  - component: {fileID: 1112865434}
   m_Layer: 0
   m_Name: Rooster
-  m_TagString: Untagged
+  m_TagString: Rooster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1140,6 +1210,7 @@ MonoBehaviour:
   gravity: -9.81
   jumpHeight: 2
   controller: {fileID: 1112865433}
+  StackTimerDuration: 1
 --- !u!4 &1112865432
 Transform:
   m_ObjectHideFlags: 0
@@ -1182,6 +1253,27 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.5, z: 0}
+--- !u!65 &1112865434
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1112865430}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &1134365596
 GameObject:
   m_ObjectHideFlags: 0

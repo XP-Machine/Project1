@@ -18,6 +18,8 @@ public class AnimalControlManager : MonoBehaviour
     public Animal ActiveAnimalIndex = 0;
 
     private PlayerInput inputActions;
+
+
     #endregion
 
     private void Awake()

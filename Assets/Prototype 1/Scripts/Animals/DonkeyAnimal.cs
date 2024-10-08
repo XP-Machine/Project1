@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DonkeyAnimal : CharacterBase
 {
+    public void Start()
+    {
+        AnimalTags = new string[] {};
+    }
     public override void Move(Vector2 inputVect)
     {
         base.Move(inputVect);

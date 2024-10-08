@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DogAnimal : CharacterBase
 {
+    public void Start()
+    {
+        AnimalTags = new string[] {"Donkey"};
+    }
     // Start is called before the first frame update
 
     public override void Move(Vector2 inputVect)
