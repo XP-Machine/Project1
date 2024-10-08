@@ -28,6 +28,7 @@ public class AnimalControlManager : MonoBehaviour
     private void Start()
     {
         ActiveAnimal = characters[(int)ActiveAnimalIndex];
+        ActiveAnimal.toggleControl();
     }
 
     private void Update()
@@ -37,8 +38,10 @@ public class AnimalControlManager : MonoBehaviour
 
     private void changeCharacters()
     {
+        ActiveAnimal.toggleControl();
         ActiveAnimalIndex = (Animal)(((int)ActiveAnimalIndex + 1) % characters.Length);
         ActiveAnimal = characters[(int)ActiveAnimalIndex];
+        ActiveAnimal.toggleControl();
     }
 
     private void Jump()

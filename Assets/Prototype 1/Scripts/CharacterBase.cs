@@ -12,6 +12,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     protected float verticalVelocity; // Stores the upward/downward velocity
     protected bool isGrounded;
+    protected bool isControlled;
 
     public virtual void Move(Vector2 inputVect)
     {
@@ -22,13 +23,12 @@ public abstract class CharacterBase : MonoBehaviour
             verticalVelocity = -2f; // Reset vertical velocity when grounded
         }
 
-        // Movement in the horizontal direction
         Vector3 move = new Vector3(inputVect.x, 0, inputVect.y);
-        controller.Move(move * speed * Time.deltaTime);
-
+        move = speed * move;
         // Apply gravity and move the character
         verticalVelocity += gravity * Time.deltaTime;
-        controller.Move(new Vector3(0, verticalVelocity, 0) * Time.deltaTime);
+        move.y = verticalVelocity;
+        controller.Move(move * Time.deltaTime);
     }
 
     public virtual void Jump()
@@ -46,5 +46,15 @@ public abstract class CharacterBase : MonoBehaviour
 
     public virtual void AbilityY()
     {
+    }
+
+    public virtual void Update()
+    {
+        if (!isControlled) Move(Vector3.zero);
+    }
+
+    public void toggleControl()
+    {
+        isControlled = !isControlled;
     }
 }
