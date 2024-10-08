@@ -83,6 +83,10 @@ public abstract class CharacterBase : MonoBehaviour
         if (StackingTimer >= StackTimerDuration)
         {
             print("Timer Reached");
+            StackManager.VisualizeStack();
+            StackManager.StackOn(StackManager.Animal.Dog, StackManager.Animal.Cat);
+            StackManager.VisualizeStack();
+            //Debug.Log(StackManager.GetLocation(StackManager.Animal.Dog));
             Stacking = false;
         }
     }

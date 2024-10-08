@@ -11,6 +11,7 @@ public class AnimalControlManager : MonoBehaviour
         Cat,
         Dog,
         Donkey,
+        Empty
     };
 
     public CharacterBase[] characters = new CharacterBase[4];
@@ -25,6 +26,9 @@ public class AnimalControlManager : MonoBehaviour
     private void Awake()
     {
         inputActions = new PlayerInput();
+        
+        //Initialize StackManager
+        StackManager.Initialize();
     }
 
     private void Start()
