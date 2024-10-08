@@ -86,6 +86,8 @@ public abstract class CharacterBase : MonoBehaviour
             StackManager.VisualizeStack();
             StackManager.StackOn(StackManager.Animal.Dog, StackManager.Animal.Cat);
             StackManager.VisualizeStack();
+            StackManager.StackOn(StackManager.Animal.Cat, StackManager.Animal.Donkey);
+            StackManager.VisualizeStack();
             //Debug.Log(StackManager.GetLocation(StackManager.Animal.Dog));
             Stacking = false;
         }

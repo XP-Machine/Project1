@@ -57,6 +57,7 @@ public static class StackManager
     public static void StackOn(Animal animalToBeStacked, Animal stackTarget)
     {
         //Identify the stack the target is in and delete the Animal to be stacked
+        Queue<Animal> animalQueue = new Queue<Animal>();
         int targetStack = 4;
         
         for (int x = 0; x < 4; x++)
@@ -65,7 +66,11 @@ public static class StackManager
             {
                 if (stacks[x, y] == animalToBeStacked)
                 {
-                    stacks[x, y] = Animal.Empty;
+                    for (int i = 0; i < 4; i++)
+                    {
+                        animalQueue.Enqueue(stacks[x,i]);
+                        stacks[x, i] = Animal.Empty;
+                    }
                 }
                 
                 if (stacks[x, y] == stackTarget)
@@ -76,14 +81,25 @@ public static class StackManager
         }
         
         //Stack on new stack
-        stacks[targetStack, 3] = animalToBeStacked; //Set on top of stack
-        for (int y = 2; y >= 0; y--)
+        while (animalQueue.Count > 0)
         {
-            if (stacks[targetStack, y+1] > stacks[targetStack, y])
+            //If empty dequeue immedeatly and continue
+            if (animalQueue.Peek() == Animal.Empty)
             {
-                Animal rememberAnimal = stacks[targetStack, y];
-                stacks[targetStack, y] = stacks[targetStack, y + 1];
-                stacks[targetStack, y + 1] = rememberAnimal;
+                animalQueue.Dequeue();
+                continue;
+            }
+            
+            //Bubble Sort Down
+            stacks[targetStack, 3] = animalQueue.Dequeue(); //Set on top of stack
+            for (int y = 2; y >= 0; y--)
+            {
+                if (stacks[targetStack, y+1] > stacks[targetStack, y])
+                {
+                    Animal rememberAnimal = stacks[targetStack, y];
+                    stacks[targetStack, y] = stacks[targetStack, y + 1];
+                    stacks[targetStack, y + 1] = rememberAnimal;
+                }
             }
         }
     }
