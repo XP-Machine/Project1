@@ -11,18 +11,24 @@ public abstract class CharacterBase : MonoBehaviour
     public float jumpHeight = 2f;
     public CharacterController controller;
 
+    protected StackManager.Animal animalType;
+
     protected float verticalVelocity; // Stores the upward/downward velocity
     protected bool isGrounded;
     protected bool isControlled;
+    protected bool isStacked;
 
     protected float StackingTimer;
     protected bool Stacking;
     public float StackTimerDuration = 1f;
 
-    protected string[] AnimalTags = new string[4] { "Rooster", "Cat", "Dog", "Donkey" };
+    public Transform AnimalAnchor;
 
+    protected string[] AnimalTags = new string[4] { "Rooster", "Cat", "Dog", "Donkey" };
+   // public GameObject[] AnimalGameObjects = new GameObject[4];
     public virtual void Move(Vector2 inputVect)
     {
+        if (isStacked) return;
         isGrounded = controller.isGrounded; // Check if character is on the ground
 
         if (isGrounded && verticalVelocity < 0)
@@ -57,7 +63,13 @@ public abstract class CharacterBase : MonoBehaviour
 
     public virtual void Update()
     {
-        if (!isControlled) Move(Vector3.zero);
+      //  if (isStacked) return;
+      //  if (!isControlled ) Move(Vector3.zero);
+    }
+
+    public virtual void Start()
+    {
+        print(AnimalAnchor ? "the" + animalName + "has an anchor" : animalName + "NO ANCHOR");
     }
 
     public void toggleControl()
@@ -65,9 +77,33 @@ public abstract class CharacterBase : MonoBehaviour
         isControlled = !isControlled;
     }
 
+    public void stackMe(StackManager.Animal otherAnimal, GameObject animal)
+    {
+        if ((int)otherAnimal <= (int)animalType) return;
 
+        Transform stackAnchor = animal.GetComponent<CharacterBase>().AnimalAnchor;
+
+        if (stackAnchor == null)
+        {
+            return;
+        }
+
+        transform.SetParent(stackAnchor);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+  //      print(transform.localPosition);
+        isStacked = true;
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        gameObject.GetComponent<CharacterController>().enabled = false;
+
+    }
     public void OnTriggerEnter(Collider other)
-    { 
+    {
+        StackManager.Animal otherAnimal = other.gameObject.GetComponent<CharacterBase>().animalType;
+        if ((int)otherAnimal <= (int)animalType) return;
+        print(animalType + " is trying to mount " +otherAnimal);
+
+
         if(AnimalTags.Contains<string>(other.gameObject.tag))
         {
             StackingTimer = 0;
@@ -82,16 +118,23 @@ public abstract class CharacterBase : MonoBehaviour
         StackingTimer += Time.deltaTime;
         if (StackingTimer >= StackTimerDuration)
         {
-            print("Timer Reached");
-            StackManager.VisualizeStack();
+       //     print("Timer Reached");
+       //     StackManager.VisualizeStack();
             StackManager.StackOn(StackManager.Animal.Dog, StackManager.Animal.Cat);
-            StackManager.VisualizeStack();
+        //    StackManager.VisualizeStack();
             StackManager.StackOn(StackManager.Animal.Dog, StackManager.Animal.Donkey);
-            StackManager.VisualizeStack();
+       //     StackManager.VisualizeStack();
             StackManager.StackOff(StackManager.Animal.Dog);
-            StackManager.VisualizeStack();
+      //      StackManager.VisualizeStack();
+
+            stackMe(other.gameObject.GetComponent<CharacterBase>().animalType, other.gameObject);
             //Debug.Log(StackManager.GetLocation(StackManager.Animal.Dog));
             Stacking = false;
         }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        Stacking = false;
+        StackingTimer = -1f;
     }
 }

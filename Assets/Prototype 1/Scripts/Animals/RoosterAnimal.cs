@@ -6,6 +6,8 @@ public class RoosterAnimal : CharacterBase
 {
     public void Start()
     {
+        base.Start();
+        animalType = StackManager.Animal.Rooster;
         AnimalTags = new string[] { "Cat", "Dog", "Donkey" };
     }
     public override void Move(Vector2 inputVect)
