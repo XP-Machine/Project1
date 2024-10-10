@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -100,6 +101,49 @@ public static class StackManager
                     stacks[targetStack, y] = stacks[targetStack, y + 1];
                     stacks[targetStack, y + 1] = rememberAnimal;
                 }
+            }
+        }
+    }
+
+    public static void StackOff(Animal animalToStackOff)
+    {
+        //Find the animal, remember stack number and put animal into first empty stack
+        int targetStack = 4;
+        bool emptyStackFound = false;
+        for (int x = 0; x < 4; x++)
+        {
+            for (int y = 0; y < 4; y++)
+            {
+                if (stacks[x, y] == animalToStackOff)
+                {
+                    targetStack = x;
+                }
+                
+                //Put animal on first empty stack
+                if (stacks[x, 0] == Animal.Empty && !emptyStackFound)
+                {
+                    stacks[x, 0] = animalToStackOff;
+                    emptyStackFound = true;
+                }
+            }
+        }
+        //Remove it and stack everything down
+        for (int i = 3; i >= 0; i--)
+        {
+            //Check if target animal
+            if (stacks[targetStack, i] == animalToStackOff)
+            {
+                stacks[targetStack, i] = Animal.Empty;
+            }
+        }
+        //Bubble sort
+        for (int y = 2; y >= 0; y--)
+        {
+            if (stacks[targetStack, y+1] > stacks[targetStack, y])
+            {
+                Animal rememberAnimal = stacks[targetStack, y];
+                stacks[targetStack, y] = stacks[targetStack, y + 1];
+                stacks[targetStack, y + 1] = rememberAnimal;
             }
         }
     }
