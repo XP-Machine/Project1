@@ -10,6 +10,7 @@ public abstract class CharacterBase : MonoBehaviour
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
     public CharacterController controller;
+    public AnimalControlManager animalControlManager;
 
     protected StackManager.Animal animalType;
 
@@ -95,7 +96,12 @@ public abstract class CharacterBase : MonoBehaviour
         isStacked = true;
         gameObject.GetComponent<BoxCollider>().enabled = false;
         gameObject.GetComponent<CharacterController>().enabled = false;
+        changeControl(otherAnimal);
+    }
 
+    private void changeControl(StackManager.Animal otherAnimal)
+    {
+        animalControlManager.ChangeCharacters((AnimalControlManager.Animal)(int)otherAnimal);
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -118,17 +124,7 @@ public abstract class CharacterBase : MonoBehaviour
         StackingTimer += Time.deltaTime;
         if (StackingTimer >= StackTimerDuration)
         {
-       //     print("Timer Reached");
-       //     StackManager.VisualizeStack();
-            StackManager.StackOn(StackManager.Animal.Dog, StackManager.Animal.Cat);
-        //    StackManager.VisualizeStack();
-            StackManager.StackOn(StackManager.Animal.Dog, StackManager.Animal.Donkey);
-       //     StackManager.VisualizeStack();
-            StackManager.StackOff(StackManager.Animal.Dog);
-      //      StackManager.VisualizeStack();
-
             stackMe(other.gameObject.GetComponent<CharacterBase>().animalType, other.gameObject);
-            //Debug.Log(StackManager.GetLocation(StackManager.Animal.Dog));
             Stacking = false;
         }
     }

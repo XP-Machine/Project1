@@ -11,7 +11,6 @@ public class AnimalControlManager : MonoBehaviour
         Cat,
         Dog,
         Donkey,
-        Empty
     };
 
     public CharacterBase[] characters = new CharacterBase[4];
@@ -28,7 +27,7 @@ public class AnimalControlManager : MonoBehaviour
         inputActions = new PlayerInput();
         
         //Initialize StackManager
-        StackManager.Initialize();
+      //  StackManager.Initialize();
     }
 
     private void Start()
@@ -42,10 +41,17 @@ public class AnimalControlManager : MonoBehaviour
         ActiveAnimal.Move(inputActions.Character.Move.ReadValue<Vector2>());
     }
 
-    private void changeCharacters()
+    public void ChangeCharacters()
     {
         ActiveAnimal.toggleControl();
         ActiveAnimalIndex = (Animal)(((int)ActiveAnimalIndex + 1) % characters.Length);
+        ActiveAnimal = characters[(int)ActiveAnimalIndex];
+        ActiveAnimal.toggleControl();
+    }
+    public void ChangeCharacters(Animal animal)
+    {
+        ActiveAnimal.toggleControl();
+        ActiveAnimalIndex = animal;
         ActiveAnimal = characters[(int)ActiveAnimalIndex];
         ActiveAnimal.toggleControl();
     }
@@ -54,18 +60,30 @@ public class AnimalControlManager : MonoBehaviour
     {
         ActiveAnimal.Jump();
     }
+    private void Ability1()
+    {
+        ActiveAnimal.AbilityX();
+    }
+    private void Ability2()
+    {
+        ActiveAnimal.AbilityY();
+    }
 
     private void OnEnable()
     {
         inputActions.Enable();
-        inputActions.Character.SwitchCharacter.performed += ctx => changeCharacters();
+        inputActions.Character.SwitchCharacter.performed += ctx => ChangeCharacters();
         inputActions.Character.Jump.performed += ctx => Jump();
+        inputActions.Character.Ability1.performed += ctx => Ability1();
+        inputActions.Character.Ability2.performed += ctx => Ability2();
     }
 
     private void OnDisable()
     {
         inputActions.Disable();
-        inputActions.Character.SwitchCharacter.performed -= ctx => changeCharacters();
+        inputActions.Character.SwitchCharacter.performed -= ctx => ChangeCharacters();
         inputActions.Character.Jump.performed -= ctx => Jump();
+        inputActions.Character.Ability1.performed -= ctx => Ability1();
+        inputActions.Character.Ability2.performed -= ctx => Ability2();
     }
 }

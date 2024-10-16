@@ -8,14 +8,13 @@ public static class StackManager
     
     public enum Animal
     {
-        Empty,
         Rooster,
         Cat,
         Dog,
         Donkey,
         
     };
-
+/*
     private static Animal[,] stacks = { { Animal.Empty, Animal.Empty, Animal.Empty, Animal.Empty }, 
                                         { Animal.Empty, Animal.Empty, Animal.Empty, Animal.Empty }, 
                                         { Animal.Empty, Animal.Empty, Animal.Empty, Animal.Empty }, 
@@ -109,7 +108,7 @@ public static class StackManager
     {
         //Find the animal, remember stack number and put animal into first empty stack
         int targetStack = 4;
-        bool emptyStackFound = false;
+        //bool emptyStackFound = false;
         for (int x = 0; x < 4; x++)
         {
             for (int y = 0; y < 4; y++)
@@ -120,11 +119,11 @@ public static class StackManager
                 }
                 
                 //Put animal on first empty stack
-                if (stacks[x, 0] == Animal.Empty && !emptyStackFound)
-                {
-                    stacks[x, 0] = animalToStackOff;
-                    emptyStackFound = true;
-                }
+              //  if (stacks[x, 0] == Animal.Empty && !emptyStackFound)
+             //   {
+             //       stacks[x, 0] = animalToStackOff;
+             //       emptyStackFound = true;
+             //   }
             }
         }
         //Remove it and stack everything down
@@ -133,7 +132,7 @@ public static class StackManager
             //Check if target animal
             if (stacks[targetStack, i] == animalToStackOff)
             {
-                stacks[targetStack, i] = Animal.Empty;
+               // stacks[targetStack, i] = Animal.Empty;
             }
         }
         //Bubble sort
@@ -147,4 +146,5 @@ public static class StackManager
             }
         }
     }
+*/
 }
