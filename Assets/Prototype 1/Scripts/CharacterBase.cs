@@ -78,21 +78,33 @@ public abstract class CharacterBase : MonoBehaviour
         isControlled = !isControlled;
     }
 
-    public void stackMe(StackManager.Animal otherAnimal, GameObject animal)
+    public void startStacking(StackManager.Animal otherAnimal)
     {
-        if ((int)otherAnimal <= (int)animalType) return;
-
-        Transform stackAnchor = animal.GetComponent<CharacterBase>().AnimalAnchor;
-
-        if (stackAnchor == null)
+        if (AnimalAnchor.childCount > 0)
         {
-            return;
+            print(AnimalAnchor.childCount);
+            CharacterBase childAnimal1 = AnimalAnchor.GetComponentInChildren<CharacterBase>();
+            if(childAnimal1.AnimalAnchor.childCount > 0)
+            {
+                CharacterBase childAnimal2 = AnimalAnchor.GetComponentInChildren<CharacterBase>();
+                childAnimal2.stackMe(otherAnimal);
+            }
+            childAnimal1.stackMe(otherAnimal);
         }
+        stackMe(otherAnimal);
+    }
 
-        transform.SetParent(stackAnchor);
+
+    public void stackMe(StackManager.Animal otherAnimal)
+    {
+        if ((int)animalType < (int)otherAnimal)
+        {
+
+        }
+        transform.SetParent(AnimalAnchor);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
-  //      print(transform.localPosition);
+        print(transform.localPosition);
         isStacked = true;
         gameObject.GetComponent<BoxCollider>().enabled = false;
         gameObject.GetComponent<CharacterController>().enabled = false;
@@ -124,7 +136,7 @@ public abstract class CharacterBase : MonoBehaviour
         StackingTimer += Time.deltaTime;
         if (StackingTimer >= StackTimerDuration)
         {
-            stackMe(other.gameObject.GetComponent<CharacterBase>().animalType, other.gameObject);
+            startStacking(other.gameObject.GetComponent<CharacterBase>().animalType);
             Stacking = false;
         }
     }

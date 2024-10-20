@@ -11,8 +11,7 @@ public static class StackManager
         Rooster,
         Cat,
         Dog,
-        Donkey,
-        
+        Donkey, 
     };
 /*
     private static Animal[,] stacks = { { Animal.Empty, Animal.Empty, Animal.Empty, Animal.Empty }, 
