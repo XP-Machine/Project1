@@ -15,6 +15,7 @@ public class AnimalControlManager : MonoBehaviour
 
     public CharacterBase[] characters = new CharacterBase[4];
     public CharacterBase ActiveAnimal;
+    public CameraManager CameraManager;
     public Animal ActiveAnimalIndex = 0;
 
     private PlayerInput inputActions;

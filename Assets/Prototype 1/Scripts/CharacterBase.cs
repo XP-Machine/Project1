@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class CharacterBase : MonoBehaviour
@@ -25,6 +27,13 @@ public abstract class CharacterBase : MonoBehaviour
 
     public Transform AnimalAnchor;
 
+    private Transform cameraTransform;
+
+    private void Awake()
+    {
+       cameraTransform = FindObjectOfType<Camera>().transform;
+    }
+
     protected string[] AnimalTags = new string[4] { "Rooster", "Cat", "Dog", "Donkey" };
    // public GameObject[] AnimalGameObjects = new GameObject[4];
     public virtual void Move(Vector2 inputVect)
@@ -37,7 +46,9 @@ public abstract class CharacterBase : MonoBehaviour
             verticalVelocity = -2f; // Reset vertical velocity when grounded
         }
 
-        Vector3 move = new Vector3(inputVect.x, 0, inputVect.y);
+        //Vector3 move = new Vector3(inputVect.x, 0, inputVect.y);
+
+        Vector3 move = cameraTransform.forward * inputVect.y + cameraTransform.right * inputVect.x;
         move = speed * move;
         // Apply gravity and move the character
         verticalVelocity += gravity * Time.deltaTime;
@@ -47,10 +58,27 @@ public abstract class CharacterBase : MonoBehaviour
 
     public virtual void Jump()
     {
+        //Stack off if I am stacked
+        if (isStacked)
+        {
+            //Take animal on me and stack it on the animal below me
+            if (AnimalAnchor.childCount > 0)
+            {
+                CharacterBase animalOnMe = AnimalAnchor.GetComponentInChildren<CharacterBase>();
+                animalOnMe.transform.SetParent(transform.parent);
+                animalOnMe.transform.localPosition = Vector3.zero;
+            }
+
+            //Unstack me nd jump
+            transform.SetParent(null);
+            isStacked = false;
+            gameObject.GetComponent<BoxCollider>().enabled = true;
+            gameObject.GetComponent<CharacterController>().enabled = true;
+        }
+        
         if (isGrounded)
         {
             verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
-            Debug.Log(animalName + " jumped!");
         }
     }
 
@@ -64,13 +92,13 @@ public abstract class CharacterBase : MonoBehaviour
 
     public virtual void Update()
     {
-      //  if (isStacked) return;
-      //  if (!isControlled ) Move(Vector3.zero);
+        if (isStacked) return;
+        if (!isControlled ) Move(Vector3.zero);
     }
 
     public virtual void Start()
     {
-        print(AnimalAnchor ? "the" + animalName + "has an anchor" : animalName + "NO ANCHOR");
+        
     }
 
     public void toggleControl()
@@ -82,7 +110,6 @@ public abstract class CharacterBase : MonoBehaviour
     {
         if (AnimalAnchor.childCount > 0)
         {
-            print(AnimalAnchor.childCount);
             CharacterBase childAnimal1 = AnimalAnchor.GetComponentInChildren<CharacterBase>();
             if(childAnimal1.AnimalAnchor.childCount > 0)
             {
@@ -97,18 +124,79 @@ public abstract class CharacterBase : MonoBehaviour
 
     public void stackMe(StackManager.Animal otherAnimal)
     {
-        if ((int)animalType < (int)otherAnimal)
+        //Get the Gameobject of the target animal
+        GameObject stackTargetBase;
+        switch (otherAnimal)
         {
-
+            case StackManager.Animal.Donkey:
+                stackTargetBase = FindObjectOfType<DonkeyAnimal>().gameObject;
+                break;
+            case StackManager.Animal.Dog:
+                stackTargetBase = FindObjectOfType<DogAnimal>().gameObject;
+                break;
+            case StackManager.Animal.Cat:
+                stackTargetBase = FindObjectOfType<CatAnimal>().gameObject;
+                break;
+            case StackManager.Animal.Rooster:
+                stackTargetBase = FindObjectOfType<RoosterAnimal>().gameObject;
+                break;
+            default:
+                stackTargetBase = null;
+                break;
         }
-        transform.SetParent(AnimalAnchor);
-        transform.localPosition = Vector3.zero;
-        transform.localRotation = Quaternion.identity;
-        print(transform.localPosition);
-        isStacked = true;
-        gameObject.GetComponent<BoxCollider>().enabled = false;
-        gameObject.GetComponent<CharacterController>().enabled = false;
-        changeControl(otherAnimal);
+
+        if (stackTargetBase == null){return;}
+
+        //If smaller then target
+        if ((int)animalType < (int)stackTargetBase.GetComponent<CharacterBase>().animalType)
+        {
+            //Check first layer child
+            CharacterBase targetScript = stackTargetBase.GetComponent<CharacterBase>();
+            
+            for (int i = 0; i < 2; i++)
+            {
+                if (targetScript.AnimalAnchor.childCount > 0)
+                {
+                    //IF Child is bigger than me remember the child
+                    if ((int)animalType < (int)targetScript.AnimalAnchor.GetComponentInChildren<CharacterBase>().animalType)
+                    {
+                        targetScript = targetScript.AnimalAnchor.GetComponentInChildren<CharacterBase>();
+                    }
+                    //If child is smaller than me put it on my back
+                    else if((int)animalType > (int)targetScript.AnimalAnchor.GetComponentInChildren<CharacterBase>().animalType)
+                    {
+                        CharacterBase childScript = targetScript.AnimalAnchor.GetComponentInChildren<CharacterBase>();
+                        childScript.transform.SetParent(AnimalAnchor);
+                        childScript.transform.localPosition = Vector3.zero;
+                        childScript.transform.localRotation = Quaternion.identity;
+                        childScript.isStacked = true;
+                        childScript.GetComponent<BoxCollider>().enabled = false;
+                        childScript.GetComponent<CharacterController>().enabled = false;
+                    }
+                }
+            }
+            
+            //Stack on the target animal
+            transform.SetParent(targetScript.AnimalAnchor);
+            transform.localPosition = Vector3.zero;
+            transform.localRotation = Quaternion.identity;
+            isStacked = true;
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+            gameObject.GetComponent<CharacterController>().enabled = false;
+            changeControl(otherAnimal);
+        } 
+        //if Bigger then target
+        else
+        {
+            //Put target on me
+            CharacterBase targetScript = stackTargetBase.GetComponent<CharacterBase>();
+            stackTargetBase.transform.SetParent(transform);
+            stackTargetBase.transform.localPosition = Vector3.zero;
+            stackTargetBase.transform.localRotation = Quaternion.identity;
+            targetScript.isStacked = true;
+            stackTargetBase.GetComponent<BoxCollider>().enabled = false;
+            stackTargetBase.GetComponent<CharacterController>().enabled = false;
+        }
     }
 
     private void changeControl(StackManager.Animal otherAnimal)
@@ -119,9 +207,6 @@ public abstract class CharacterBase : MonoBehaviour
     {
         StackManager.Animal otherAnimal = other.gameObject.GetComponent<CharacterBase>().animalType;
         if ((int)otherAnimal <= (int)animalType) return;
-        print(animalType + " is trying to mount " +otherAnimal);
-
-
         if(AnimalTags.Contains<string>(other.gameObject.tag))
         {
             StackingTimer = 0;
