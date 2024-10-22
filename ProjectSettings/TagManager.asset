@@ -8,17 +8,19 @@ TagManager:
   - Cat
   - Dog
   - Donkey
+  - InteractableButton
+  - InteractableLever
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Rooster
+  - Cat
+  - Dog
+  - Donkey
   - 
   - 
   - 

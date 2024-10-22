@@ -6,6 +6,8 @@ public class DogAnimal : CharacterBase
 {
     public void Start()
     {
+        base.Start();
+        animalType = StackManager.Animal.Dog;
         AnimalTags = new string[] {"Donkey"};
     }
     // Start is called before the first frame update

@@ -6,6 +6,8 @@ public class DonkeyAnimal : CharacterBase
 {
     public void Start()
     {
+        base.Start();
+        animalType = StackManager.Animal.Donkey;
         AnimalTags = new string[] {};
     }
     public override void Move(Vector2 inputVect)
