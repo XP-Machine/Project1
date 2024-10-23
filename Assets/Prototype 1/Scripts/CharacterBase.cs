@@ -9,6 +9,7 @@ public abstract class CharacterBase : MonoBehaviour
 {
     public string animalName;
     public float speed;
+    public float rotationSpeed = 2;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
     public CharacterController controller;
@@ -46,14 +47,21 @@ public abstract class CharacterBase : MonoBehaviour
             verticalVelocity = -2f; // Reset vertical velocity when grounded
         }
 
-        //Vector3 move = new Vector3(inputVect.x, 0, inputVect.y);
-
         Vector3 move = cameraTransform.forward * inputVect.y + cameraTransform.right * inputVect.x;
         move = speed * move;
         // Apply gravity and move the character
         verticalVelocity += gravity * Time.deltaTime;
         move.y = verticalVelocity;
         controller.Move(move * Time.deltaTime);
+        
+        //Rotate model
+        move.y = 0f; //Remove vertical component
+        float angleToRotate = Quaternion.FromToRotation(transform.forward, move).eulerAngles.y; //Calculate angle
+        angleToRotate -= 180; //Adjust angles between -180 and 180
+        if (move != Vector3.zero)
+        {
+            transform.Rotate(Vector3.up,angleToRotate*Time.deltaTime * rotationSpeed);
+        }
     }
 
     public virtual void Jump()
