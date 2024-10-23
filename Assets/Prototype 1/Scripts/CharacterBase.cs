@@ -9,6 +9,7 @@ public abstract class CharacterBase : MonoBehaviour
 {
     public string animalName;
     public float speed;
+    public float rotationSpeed;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
     public CharacterController controller;
@@ -28,6 +29,9 @@ public abstract class CharacterBase : MonoBehaviour
     public Transform AnimalAnchor;
 
     private Transform cameraTransform;
+    
+    //To be deleted
+    private Vector3 GizmoVector;
 
     private void Awake()
     {
@@ -36,6 +40,7 @@ public abstract class CharacterBase : MonoBehaviour
 
     protected string[] AnimalTags = new string[4] { "Rooster", "Cat", "Dog", "Donkey" };
    // public GameObject[] AnimalGameObjects = new GameObject[4];
+   
     public virtual void Move(Vector2 inputVect)
     {
         if (isStacked) return;
@@ -46,14 +51,23 @@ public abstract class CharacterBase : MonoBehaviour
             verticalVelocity = -2f; // Reset vertical velocity when grounded
         }
 
-        //Vector3 move = new Vector3(inputVect.x, 0, inputVect.y);
-
+        //Move
         Vector3 move = cameraTransform.forward * inputVect.y + cameraTransform.right * inputVect.x;
         move = speed * move;
         // Apply gravity and move the character
         verticalVelocity += gravity * Time.deltaTime;
         move.y = verticalVelocity;
+        GizmoVector = move;
         controller.Move(move * Time.deltaTime);
+        
+        //Rotate to face moving direction;
+        if (move != Vector3.zero)
+        {
+            float angleToRotate = Quaternion.FromToRotation(transform.forward, move).eulerAngles.y;
+            
+            Debug.Log(angleToRotate); 
+            transform.Rotate(Vector3.up, angleToRotate * Time.deltaTime * rotationSpeed);
+        }
     }
 
     public virtual void Jump()
@@ -229,5 +243,10 @@ public abstract class CharacterBase : MonoBehaviour
     {
         Stacking = false;
         StackingTimer = -1f;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(transform.position,transform.position-GizmoVector);
     }
 }
