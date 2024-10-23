@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="993ef51a-4a86-4b56-88a3-6a67ab8349c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.inputactions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CharacterBase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CharacterBase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +24,6 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Prototype 1/Scripts/StackManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/PlayerInput/PlayerInputManager.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -32,7 +36,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Prototype&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Prototype-AnimalSelfStack&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
@@ -97,9 +101,6 @@
       <workItem from="1729422776486" duration="10064000" />
       <workItem from="1729500029995" duration="1000" />
       <workItem from="1729500039288" duration="2176000" />
-      <workItem from="1729590376037" duration="3873000" />
-      <workItem from="1729701861816" duration="1018000" />
-      <workItem from="1729717453252" duration="335000" />
     </task>
     <servers />
   </component>
