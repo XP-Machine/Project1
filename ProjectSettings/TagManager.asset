@@ -10,7 +10,6 @@ TagManager:
   - Donkey
   - InteractableButton
   - InteractableLever
-  - DigSpot
   layers:
   - Default
   - TransparentFX
