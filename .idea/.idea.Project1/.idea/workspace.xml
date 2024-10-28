@@ -6,8 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="993ef51a-4a86-4b56-88a3-6a67ab8349c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Laurent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Laurent.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +32,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;Prototype&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -97,7 +100,9 @@
       <workItem from="1729500029995" duration="1000" />
       <workItem from="1729500039288" duration="2176000" />
       <workItem from="1729761302301" duration="805000" />
-      <workItem from="1729840130585" duration="1294000" />
+      <workItem from="1729840130585" duration="4740000" />
+      <workItem from="1730064361165" duration="766000" />
+      <workItem from="1730120575164" duration="2783000" />
     </task>
     <servers />
   </component>

@@ -10,6 +10,7 @@ TagManager:
   - Donkey
   - InteractableButton
   - InteractableLever
+  - InteractableWall
   layers:
   - Default
   - TransparentFX
