@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CatAnimal : CharacterBase
@@ -26,6 +27,7 @@ public class CatAnimal : CharacterBase
             if (collider.CompareTag("InteractableLever"))
             {
                 print("LeverPressed");
+                collider.gameObject.GetComponent<OpenGate>().openGate();
             }
         }
     }

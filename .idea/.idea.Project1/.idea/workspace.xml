@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="993ef51a-4a86-4b56-88a3-6a67ab8349c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Laurent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Laurent.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Rooster_Blockout_01.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Rooster_Blockout_01.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Button.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Button.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Lever.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Lever.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Rooster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Rooster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +24,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Prototype 1/Scripts/OpenGate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Prototype 1/Scripts/StackManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.1/Runtime/Helpers/CinemachineInputProvider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
@@ -103,6 +109,7 @@
       <workItem from="1729840130585" duration="4740000" />
       <workItem from="1730064361165" duration="766000" />
       <workItem from="1730120575164" duration="2783000" />
+      <workItem from="1730133692568" duration="2492000" />
     </task>
     <servers />
   </component>

@@ -12,6 +12,7 @@ TagManager:
   - InteractableLever
   - InteractableWall
   - DigSpot
+  - Breakable
   layers:
   - Default
   - TransparentFX

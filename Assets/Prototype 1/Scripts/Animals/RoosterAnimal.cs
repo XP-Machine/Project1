@@ -40,7 +40,7 @@ public class RoosterAnimal : CharacterBase
             if (collider.CompareTag("InteractableButton"))
             {
                 print("ButtonPressed");
-                break;
+                collider.gameObject.GetComponent<OpenGate>().openGate();
             }
         }
     }
