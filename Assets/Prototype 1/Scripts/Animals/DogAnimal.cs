@@ -28,6 +28,11 @@ public class DogAnimal : CharacterBase
             // Check if the object hit has the tag "digSpot"
             if (hit.collider.gameObject.tag == "DigSpot")
             {
+                if (AnimalAnchor.childCount > 0)
+                {
+                    CharacterBase childAnimal1 = AnimalAnchor.GetComponentInChildren<CharacterBase>();
+                    childAnimal1.Jump();
+                }
                 // Access the DigSpot script on the hit object
                 DigSpot digSpotScript = hit.collider.gameObject.GetComponent<DigSpot>();
                 if (digSpotScript != null && digSpotScript.LinkedDigSpot != null)
