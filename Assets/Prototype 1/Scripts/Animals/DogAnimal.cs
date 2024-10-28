@@ -5,7 +5,7 @@ using UnityEngine;
 public class DogAnimal : CharacterBase
 {
     private CharacterController _Controller;
-    public void Start()
+    public override void Start()
     {
         base.Start();
         animalType = StackManager.Animal.Dog;

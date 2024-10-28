@@ -7,7 +7,7 @@ public class RoosterAnimal : CharacterBase
     public float interactionRadius = 1;
     public float gravityReductionRate = 0.3f;
     public bool isGliding = false;
-    public void Start()
+    public override void Start()
     {
         base.Start();
         animalType = StackManager.Animal.Rooster;

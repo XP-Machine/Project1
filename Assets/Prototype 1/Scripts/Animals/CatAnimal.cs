@@ -6,7 +6,7 @@ using UnityEngine;
 public class CatAnimal : CharacterBase
 {
     public float interactionRadius = 1;
-    public void Start()
+    public override void Start()
     {
         base.Start();
         animalType = StackManager.Animal.Cat;

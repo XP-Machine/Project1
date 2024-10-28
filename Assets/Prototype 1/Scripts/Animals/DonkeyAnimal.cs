@@ -8,7 +8,7 @@ public class DonkeyAnimal : CharacterBase
     public float raycastDistance = 1f; 
     public LayerMask pushableLayerMask; 
 
-    public void Start()
+    public override void Start()
     {
         base.Start();
         animalType = StackManager.Animal.Donkey;
