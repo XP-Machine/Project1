@@ -6,14 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="993ef51a-4a86-4b56-88a3-6a67ab8349c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DogAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DogAnimal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DonkeyAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DonkeyAnimal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CameraManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CameraManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +102,9 @@
       <workItem from="1729840130585" duration="4740000" />
       <workItem from="1730064361165" duration="766000" />
       <workItem from="1730120575164" duration="2783000" />
-      <workItem from="1730133692568" duration="4392000" />
+      <workItem from="1730133692568" duration="4990000" />
+      <workItem from="1730153501203" duration="725000" />
+      <workItem from="1730191731064" duration="1941000" />
     </task>
     <servers />
   </component>
