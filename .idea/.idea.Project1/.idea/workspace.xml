@@ -6,7 +6,97 @@
   <component name="ChangeListManager">
     <list default="true" id="993ef51a-4a86-4b56-88a3-6a67ab8349c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Files.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Cat_Blockout_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Cat_Blockout_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Dog_Blockout_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Dog_Blockout_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Donkey_Rig_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Donkey_Rig_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Rooster_Blockout_01.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Rooster_Blockout_01.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Cat.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Cat.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/DIgSpot.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/DIgSpot.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Dog.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Dog.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Donkey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Donkey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Ground.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Ground.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Button.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Cat.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Cat.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/CinemachineBrain.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/CinemachineBrain.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/DigSpot.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/DigSpot.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Dog.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Dog.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Donkey.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Donkey.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Fence.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Fence.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/FreeLook Camera.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/FreeLook Camera.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Gate.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Gate.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Lever.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Lever.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/ManagerTmp.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/ManagerTmp.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/PushableBlock.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/PushableBlock.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Rooster.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Rooster.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Wall.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Wall.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Rooster.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Rooster.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Laurent.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Laurent.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DogAnimal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DogAnimal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DonkeyAnimal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DonkeyAnimal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CameraManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CameraManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CharacterBase.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CharacterBase.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/DigSpot.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/DigSpot.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/OpenGate.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/OpenGate.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/StackManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/StackManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/bin.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/bin/CharacterMovement.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/bin/CharacterMovement.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Walls.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Walls.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blend Files/Donkey study.blend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Blend Files/Donkey study.blend1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +107,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Prototype 1/Scripts/OpenGate.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Prototype 1/Scripts/StackManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Scripts/Environment/environment_digLocation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Code/Scripts/StackManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.10.1/Runtime/Helpers/CinemachineInputProvider.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -105,6 +195,7 @@
       <workItem from="1730133692568" duration="4990000" />
       <workItem from="1730153501203" duration="725000" />
       <workItem from="1730191731064" duration="1941000" />
+      <workItem from="1730448083737" duration="2461000" />
     </task>
     <servers />
   </component>
