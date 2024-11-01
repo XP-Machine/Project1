@@ -3,19 +3,28 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Rooster
+  - Cat
+  - Dog
+  - Donkey
+  - InteractableButton
+  - InteractableLever
+  - InteractableWall
+  - DigSpot
+  - Breakable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Rooster
+  - Cat
+  - Dog
+  - Donkey
+  - Pushable
   - 
   - 
   - 
