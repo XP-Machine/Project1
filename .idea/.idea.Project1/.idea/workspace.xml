@@ -6,97 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="993ef51a-4a86-4b56-88a3-6a67ab8349c4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Project1/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Files.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.inputactions" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input Files/PlayerInput.inputactions.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Cat_Blockout_01.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Cat_Blockout_01.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Dog_Blockout_01.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Dog_Blockout_01.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Donkey_Rig_01.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Donkey_Rig_01.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Rooster_Blockout_01.fbx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Models/Rooster_Blockout_01.fbx.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Cat.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Cat.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/DIgSpot.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/DIgSpot.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Dog.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Dog.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Donkey.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Donkey.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Ground.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Ground.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Button.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Button.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Cat.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Cat.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/CinemachineBrain.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/CinemachineBrain.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/DigSpot.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/DigSpot.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Dog.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Dog.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Donkey.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Donkey.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Fence.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Fence.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/FreeLook Camera.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/FreeLook Camera.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Gate.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Gate.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Lever.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Lever.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/ManagerTmp.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/ManagerTmp.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/PushableBlock.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/PushableBlock.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Rooster.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Rooster.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Wall.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Prefabs/Wall.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Rooster.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Rooster.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Laurent.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Laurent.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scenes/Prototype 1.unity.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/AnimalControlManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/CatAnimal.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DogAnimal.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DogAnimal.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DonkeyAnimal.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/DonkeyAnimal.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/Animals/RoosterAnimal.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CameraManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CameraManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CharacterBase.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/CharacterBase.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/DigSpot.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/DigSpot.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/OpenGate.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/OpenGate.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/StackManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/StackManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/bin.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/bin/CharacterMovement.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Scripts/bin/CharacterMovement.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Walls.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prototype 1/Walls.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blend Files/Donkey study.blend" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blend Files/Donkey study.blend1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Scripts/Animals/PlayerInput.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Scripts/Animals/PlayerInput.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Scripts/Animals/PlayerInput.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Scripts/Animals/PlayerInput.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Scripts/Animals/PlayerInput.inputactions.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Scripts/Animals/PlayerInput.inputactions.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Scripts/Animals/animal_base.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Scripts/Animals/animal_base.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Code/Scripts/Managers/manager_animals.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Code/Scripts/Managers/manager_animals.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/[Prefabs]/animal_cat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/[Prefabs]/animal_cat.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/[Prefabs]/animal_dog.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/[Prefabs]/animal_dog.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/[Prefabs]/animal_donkey.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/[Prefabs]/animal_donkey.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/[Prefabs]/animal_rooster.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/[Prefabs]/animal_rooster.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/[Prefabs]/camera_Brain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/[Prefabs]/camera_Brain.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Level/[Scenes]/scene_laurent.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Level/[Scenes]/scene_laurent.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,25 +39,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Prototype&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "prototype2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\klela\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\klela\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\klela\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\klela\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\klela\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\klela\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Standalone Player.Start Unity">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="D:\Programs\Unity\2022.3.47f1\Editor\Unity.exe" />
@@ -196,6 +116,7 @@
       <workItem from="1730153501203" duration="725000" />
       <workItem from="1730191731064" duration="1941000" />
       <workItem from="1730448083737" duration="2461000" />
+      <workItem from="1730795344698" duration="4846000" />
     </task>
     <servers />
   </component>

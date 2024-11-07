@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,11 +10,13 @@ public abstract class animal_base : MonoBehaviour
 {
     public string animalName;
     public float speed;
+    public float runningSpeed;
     public float rotationSpeed = 2;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
     public CharacterController controller;
     public manager_animals animalControlManager;
+    public CinemachineFreeLook myCamera;
 
     protected manager_animals.Animal animalType;
 
@@ -21,6 +24,7 @@ public abstract class animal_base : MonoBehaviour
     protected bool isGrounded;
     protected bool isControlled;
     protected bool isStacked;
+    protected bool isRunning = false;
 
     protected float StackingTimer;
     protected bool Stacking;
@@ -36,7 +40,6 @@ public abstract class animal_base : MonoBehaviour
     }
 
     protected string[] AnimalTags = new string[4] { "Rooster", "Cat", "Dog", "Donkey" };
-   // public GameObject[] AnimalGameObjects = new GameObject[4];
     public virtual void Move(Vector2 inputVect)
     {
         if (isStacked) return;
@@ -48,7 +51,14 @@ public abstract class animal_base : MonoBehaviour
         }
 
         Vector3 move = cameraTransform.forward * inputVect.y + cameraTransform.right * inputVect.x;
-        move = speed * move;
+        if (isRunning)
+        {
+            move = runningSpeed * move;
+        }
+        else
+        {
+            move = speed * move;
+        }
         // Apply gravity and move the character
         verticalVelocity += gravity * Time.deltaTime;
         move.y = verticalVelocity;
@@ -111,7 +121,13 @@ public abstract class animal_base : MonoBehaviour
 
     public void toggleControl()
     {
+        myCamera.gameObject.SetActive(!myCamera.gameObject.activeSelf);
         isControlled = !isControlled;
+    }
+
+    public void toggleRunning()
+    {
+        isRunning = !isRunning;
     }
 
     public void startStacking(manager_animals.Animal otherAnimal)
