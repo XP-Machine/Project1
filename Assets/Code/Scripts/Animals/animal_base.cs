@@ -229,6 +229,7 @@ public abstract class animal_base : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.GetComponent<animal_base>() == null) return;
         manager_animals.Animal otherAnimal = other.gameObject.GetComponent<animal_base>().animalType;
         if ((int)otherAnimal <= (int)animalType) return;
         if(AnimalTags.Contains<string>(other.gameObject.tag))
@@ -240,6 +241,7 @@ public abstract class animal_base : MonoBehaviour
     }
     public void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.GetComponent<animal_base>() == null) return;
         if (!Stacking) return;
 
         StackingTimer += Time.deltaTime;
@@ -254,4 +256,22 @@ public abstract class animal_base : MonoBehaviour
         Stacking = false;
         StackingTimer = -1f;
     }
+
+    //uses recursion
+    public int getWeight()
+    {
+        int totalWeight = (int)animalType;
+
+        if (AnimalAnchor.childCount > 0)
+        {
+            animal_base stackedAnimal = AnimalAnchor.GetChild(0).GetComponent<animal_base>();
+            if (stackedAnimal != null)
+            {
+                totalWeight += stackedAnimal.getWeight();
+            }
+        }
+
+        return totalWeight;
+    }
+
 }
