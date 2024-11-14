@@ -274,4 +274,9 @@ public abstract class animal_base : MonoBehaviour
         return totalWeight;
     }
 
+    public bool getStacked()
+    {
+        return isStacked;
+    }
+
 }
