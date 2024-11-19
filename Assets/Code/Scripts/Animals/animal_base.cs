@@ -25,6 +25,7 @@ public abstract class animal_base : MonoBehaviour
     protected bool isControlled;
     protected bool isStacked;
     protected bool isRunning = false;
+    public LayerMask mask;
 
     protected float StackingTimer;
     protected bool Stacking;
@@ -96,7 +97,7 @@ public abstract class animal_base : MonoBehaviour
         
         if (isGrounded)
         {
-            verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            if (!checkToStack()) verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
     }
 
@@ -227,6 +228,8 @@ public abstract class animal_base : MonoBehaviour
     {
         animalControlManager.ChangeCharacters((manager_animals.Animal)(int)otherAnimal);
     }
+
+    /*
     public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.GetComponent<animal_base>() == null) return;
@@ -239,6 +242,8 @@ public abstract class animal_base : MonoBehaviour
         }
         
     }
+    */
+    /*
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.GetComponent<animal_base>() == null) return;
@@ -251,6 +256,7 @@ public abstract class animal_base : MonoBehaviour
             Stacking = false;
         }
     }
+    */
     public void OnTriggerExit(Collider other)
     {
         Stacking = false;
@@ -273,5 +279,46 @@ public abstract class animal_base : MonoBehaviour
 
         return totalWeight;
     }
+    public void unStack()
+    {
+        transform.SetParent(null);
+        isStacked = false;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponent<CharacterController>().enabled = true;
+        verticalVelocity += (4 - (int)animalType) * 4;
+        if (AnimalAnchor.childCount > 0)
+        {
+            GameObject stackedAnimal = AnimalAnchor.GetChild(0).gameObject;
+            if (stackedAnimal != null)
+            {
+                stackedAnimal.GetComponent<animal_base>().unStack();
+            }
+        }
+    }
 
+    public bool checkToStack()
+    {
+        Ray ray = new Ray(transform.position + new Vector3(0, 1, 0), -transform.forward);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit, 5,mask))
+        {
+            if (hit.collider.gameObject.GetComponent<animal_base>() == null) return false;
+
+            manager_animals.Animal otherAnimal = hit.collider.gameObject.GetComponent<animal_base>().animalType;
+
+            stackMe(otherAnimal);
+            return true;
+        }
+
+        return false;
+    }
+
+    void OnDrawGizmos()
+    {
+        // Visualize the raycast in the Scene view
+        Gizmos.color = Color.blue;
+        Vector3 forwardDirection = -transform.forward * 5;
+        Gizmos.DrawLine(transform.position + new Vector3(0,1,0), transform.position + forwardDirection);
+    }
 }
