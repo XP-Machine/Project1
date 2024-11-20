@@ -21,10 +21,6 @@ public class animal_donkey : animal_base
 
     }
 
-    public override void Jump()
-    {
-        unStack();
-    }
     void PushForward()
     {
         // Perform a forward raycast with the specified distance and layer mask

@@ -77,6 +77,7 @@ public abstract class animal_base : MonoBehaviour
 
     public virtual void Jump()
     {
+
         //Stack off if I am stacked
         if (isStacked)
         {
@@ -88,17 +89,27 @@ public abstract class animal_base : MonoBehaviour
                 animalOnMe.transform.localPosition = Vector3.zero;
             }
 
-            //Unstack me nd jump
-            transform.SetParent(null);
-            isStacked = false;
-            gameObject.GetComponent<BoxCollider>().enabled = true;
-            gameObject.GetComponent<CharacterController>().enabled = true;
+            UnstackMe();
+            return;
         }
-        
+
+        if (checkToStack())
+        {
+            return;
+        }
+
+        //If I am the lowest ( I have someone stacked on me)
+        if(AnimalAnchor.childCount > 0)
+        {
+            UnstackMe();
+            return;
+        }
+
         if (isGrounded)
         {
-            if (!checkToStack()) verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+
     }
 
     public virtual void AbilityX()
@@ -215,7 +226,7 @@ public abstract class animal_base : MonoBehaviour
         {
             //Put target on me
             animal_base targetScript = stackTargetBase.GetComponent<animal_base>();
-            stackTargetBase.transform.SetParent(transform);
+            stackTargetBase.transform.SetParent(AnimalAnchor);
             stackTargetBase.transform.localPosition = Vector3.zero;
             stackTargetBase.transform.localRotation = Quaternion.identity;
             targetScript.isStacked = true;
@@ -242,8 +253,6 @@ public abstract class animal_base : MonoBehaviour
         }
         
     }
-    */
-    /*
     public void OnTriggerStay(Collider other)
     {
         if (other.gameObject.GetComponent<animal_base>() == null) return;
@@ -256,12 +265,13 @@ public abstract class animal_base : MonoBehaviour
             Stacking = false;
         }
     }
-    */
+
     public void OnTriggerExit(Collider other)
     {
         Stacking = false;
         StackingTimer = -1f;
     }
+    */
 
     //uses recursion
     public int getWeight()
@@ -279,22 +289,25 @@ public abstract class animal_base : MonoBehaviour
 
         return totalWeight;
     }
-    public void unStack()
+
+    public void UnstackMe()
     {
         transform.SetParent(null);
         isStacked = false;
         gameObject.GetComponent<BoxCollider>().enabled = true;
         gameObject.GetComponent<CharacterController>().enabled = true;
-        verticalVelocity += (4 - (int)animalType) * 4;
+        //verticalVelocity += (4 - (int)animalType) * 4;
         if (AnimalAnchor.childCount > 0)
         {
             GameObject stackedAnimal = AnimalAnchor.GetChild(0).gameObject;
             if (stackedAnimal != null)
             {
-                stackedAnimal.GetComponent<animal_base>().unStack();
+                stackedAnimal.GetComponent<animal_base>().UnstackMe();
+                stackedAnimal.GetComponent <animal_base>().verticalVelocity+= (4 - (int)animalType) * 4;
             }
         }
     }
+
 
     public bool checkToStack()
     {
@@ -307,11 +320,16 @@ public abstract class animal_base : MonoBehaviour
 
             manager_animals.Animal otherAnimal = hit.collider.gameObject.GetComponent<animal_base>().animalType;
 
-            stackMe(otherAnimal);
+            startStacking(otherAnimal);
             return true;
         }
 
         return false;
+    }
+
+    public bool getStacked()
+    {
+        return isStacked;
     }
 
     void OnDrawGizmos()
