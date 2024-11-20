@@ -20,6 +20,7 @@ public class animal_donkey : animal_base
         PushForward();
 
     }
+
     void PushForward()
     {
         // Perform a forward raycast with the specified distance and layer mask
@@ -56,7 +57,7 @@ public class animal_donkey : animal_base
             }
         }
     }
-
+    /*
     void OnDrawGizmos()
     {
         // Visualize the raycast in the Scene view
@@ -64,4 +65,5 @@ public class animal_donkey : animal_base
         Vector3 forwardDirection = -transform.forward * raycastDistance;
         Gizmos.DrawLine(transform.position, transform.position + forwardDirection);
     }
+    */
 }

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,11 +10,13 @@ public abstract class animal_base : MonoBehaviour
 {
     public string animalName;
     public float speed;
+    public float runningSpeed;
     public float rotationSpeed = 2;
     public float gravity = -9.81f;
     public float jumpHeight = 2f;
     public CharacterController controller;
     public manager_animals animalControlManager;
+    public CinemachineFreeLook myCamera;
 
     protected manager_animals.Animal animalType;
 
@@ -21,6 +24,8 @@ public abstract class animal_base : MonoBehaviour
     protected bool isGrounded;
     protected bool isControlled;
     protected bool isStacked;
+    protected bool isRunning = false;
+    public LayerMask mask;
 
     protected float StackingTimer;
     protected bool Stacking;
@@ -36,7 +41,6 @@ public abstract class animal_base : MonoBehaviour
     }
 
     protected string[] AnimalTags = new string[4] { "Rooster", "Cat", "Dog", "Donkey" };
-   // public GameObject[] AnimalGameObjects = new GameObject[4];
     public virtual void Move(Vector2 inputVect)
     {
         if (isStacked) return;
@@ -48,7 +52,14 @@ public abstract class animal_base : MonoBehaviour
         }
 
         Vector3 move = cameraTransform.forward * inputVect.y + cameraTransform.right * inputVect.x;
-        move = speed * move;
+        if (isRunning)
+        {
+            move = runningSpeed * move;
+        }
+        else
+        {
+            move = speed * move;
+        }
         // Apply gravity and move the character
         verticalVelocity += gravity * Time.deltaTime;
         move.y = verticalVelocity;
@@ -66,6 +77,7 @@ public abstract class animal_base : MonoBehaviour
 
     public virtual void Jump()
     {
+
         //Stack off if I am stacked
         if (isStacked)
         {
@@ -77,17 +89,27 @@ public abstract class animal_base : MonoBehaviour
                 animalOnMe.transform.localPosition = Vector3.zero;
             }
 
-            //Unstack me nd jump
-            transform.SetParent(null);
-            isStacked = false;
-            gameObject.GetComponent<BoxCollider>().enabled = true;
-            gameObject.GetComponent<CharacterController>().enabled = true;
+            UnstackMe();
+            return;
         }
-        
+
+        if (checkToStack())
+        {
+            return;
+        }
+
+        //If I am the lowest ( I have someone stacked on me)
+        if(AnimalAnchor.childCount > 0)
+        {
+            UnstackMe();
+            return;
+        }
+
         if (isGrounded)
         {
             verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
         }
+
     }
 
     public virtual void AbilityX()
@@ -111,7 +133,13 @@ public abstract class animal_base : MonoBehaviour
 
     public void toggleControl()
     {
+        myCamera.gameObject.SetActive(!myCamera.gameObject.activeSelf);
         isControlled = !isControlled;
+    }
+
+    public void toggleRunning()
+    {
+        isRunning = !isRunning;
     }
 
     public void startStacking(manager_animals.Animal otherAnimal)
@@ -198,7 +226,7 @@ public abstract class animal_base : MonoBehaviour
         {
             //Put target on me
             animal_base targetScript = stackTargetBase.GetComponent<animal_base>();
-            stackTargetBase.transform.SetParent(transform);
+            stackTargetBase.transform.SetParent(AnimalAnchor);
             stackTargetBase.transform.localPosition = Vector3.zero;
             stackTargetBase.transform.localRotation = Quaternion.identity;
             targetScript.isStacked = true;
@@ -211,8 +239,11 @@ public abstract class animal_base : MonoBehaviour
     {
         animalControlManager.ChangeCharacters((manager_animals.Animal)(int)otherAnimal);
     }
+
+    /*
     public void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.GetComponent<animal_base>() == null) return;
         manager_animals.Animal otherAnimal = other.gameObject.GetComponent<animal_base>().animalType;
         if ((int)otherAnimal <= (int)animalType) return;
         if(AnimalTags.Contains<string>(other.gameObject.tag))
@@ -224,6 +255,7 @@ public abstract class animal_base : MonoBehaviour
     }
     public void OnTriggerStay(Collider other)
     {
+        if (other.gameObject.GetComponent<animal_base>() == null) return;
         if (!Stacking) return;
 
         StackingTimer += Time.deltaTime;
@@ -233,9 +265,78 @@ public abstract class animal_base : MonoBehaviour
             Stacking = false;
         }
     }
+
     public void OnTriggerExit(Collider other)
     {
         Stacking = false;
         StackingTimer = -1f;
+    }
+    */
+
+    //uses recursion
+    public int getWeight()
+    {
+        int totalWeight = (int)animalType;
+
+        if (AnimalAnchor.childCount > 0)
+        {
+            animal_base stackedAnimal = AnimalAnchor.GetChild(0).GetComponent<animal_base>();
+            if (stackedAnimal != null)
+            {
+                totalWeight += stackedAnimal.getWeight();
+            }
+        }
+
+        return totalWeight;
+    }
+
+    public void UnstackMe()
+    {
+        transform.SetParent(null);
+        isStacked = false;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponent<CharacterController>().enabled = true;
+        //verticalVelocity += (4 - (int)animalType) * 4;
+        if (AnimalAnchor.childCount > 0)
+        {
+            GameObject stackedAnimal = AnimalAnchor.GetChild(0).gameObject;
+            if (stackedAnimal != null)
+            {
+                stackedAnimal.GetComponent<animal_base>().UnstackMe();
+                stackedAnimal.GetComponent <animal_base>().verticalVelocity+= (4 - (int)animalType) * 4;
+            }
+        }
+    }
+
+
+    public bool checkToStack()
+    {
+        Ray ray = new Ray(transform.position + new Vector3(0, 1, 0), -transform.forward);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit, 5,mask))
+        {
+            if (hit.collider.gameObject.GetComponent<animal_base>() == null) return false;
+
+            manager_animals.Animal otherAnimal = hit.collider.gameObject.GetComponent<animal_base>().animalType;
+
+            startStacking(otherAnimal);
+            return true;
+        }
+
+        return false;
+    }
+
+    public bool getStacked()
+    {
+        return isStacked;
+    }
+
+    void OnDrawGizmos()
+    {
+        // Visualize the raycast in the Scene view
+        Gizmos.color = Color.blue;
+        Vector3 forwardDirection = -transform.forward * 5;
+        Gizmos.DrawLine(transform.position + new Vector3(0,1,0), transform.position + forwardDirection);
     }
 }
